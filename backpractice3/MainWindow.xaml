@@ -10,13 +10,17 @@
     <Grid>
         <StackPanel Margin="0,1,0,-1">
             <StackPanel Height="180" Width="692" Orientation="Horizontal">
+                <ListBox x:Name="ListBox1" Height="100" Width="360" SelectionChanged="PrintText" SelectionMode ="Single" />
                 <StackPanel Width="404" Height="149">
-                    <ListBox x:Name="ListBox1" Height="100" Width="360" SelectionChanged="PrintText" SelectionMode ="Single" />
-                    <!--<Button Content="適応" Click="button_reference_Click" Margin="0,20" Width="114"/>-->
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Width="262" Height="30">
-                    <TextBox x:Name="TextBox1" TextWrapping="Wrap" Width="120" Margin="15,5" HorizontalAlignment="Center"/>
-                    <Button Content="保存" Height="20" Width="71" Click="button_write_Click" />
+                    <Button Content="参照" Click="button_reference_Click" Height="20" Width="71" Margin="0,10"/>
+                    <StackPanel Orientation="Horizontal" Width="262" Height="30" Margin="0,10">
+                        <TextBox x:Name="TextBox_export" TextWrapping="Wrap" Width="120" Margin="15,5" HorizontalAlignment="Center"/>
+                        <Button Content="エクスポート" Click="button_export_Click" Height="20" Width="71"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Width="262" Height="30">
+                        <TextBox x:Name="TextBox1" TextWrapping="Wrap" Width="120" Margin="15,5" HorizontalAlignment="Center"/>
+                        <Button Content="保存" Height="20" Width="71" Click="button_write_Click" />
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
             <GroupBox Header="比較設定" Height="331" Width="667" FontSize="36" BorderThickness="3" BorderBrush="Black"  >
