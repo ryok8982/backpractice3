@@ -32,13 +32,14 @@ namespace backPractice
 
 
         private void Window_Loaded(object sender, RoutedEventArgs e) {
-            XElement xml = XElement.Load(@"C:\Users\大西　遼佑\source\repos\backpractice3\backpractice3\bin\Debug\net5.0-windows\test004.xml");
+            //string szFile = "../..//test004.xml";
+            //string szFull = System.IO.Path.GetFullPath(szFile);
+            XElement xml = XElement.Load(@"test004.xml");
             var infos = xml.Elements("ListOfInspectionMethod").Select(x => x.Element("MethodName"));
             {
 
                 foreach (String info in infos)
                 {
-
                     ListBox1.Items.Add(info);
                 }
             };
@@ -69,7 +70,7 @@ namespace backPractice
             int IntMax = Convert.ToInt32(CS_max.IsChecked);
             int IntMin = Convert.ToInt32(CS_min.IsChecked);
 
-            XElement xml = XElement.Load(@"C:\Users\大西　遼佑\source\repos\backpractice3\backpractice3\bin\Debug\net5.0-windows\test004.xml");
+            XElement xml = XElement.Load(@"test004.xml");
 
             XElement datas = new XElement("ListOfInspectionMethod",
             new XElement("MethodName", TextBox1.Text),
@@ -81,7 +82,7 @@ namespace backPractice
 
             xml.Add(datas);
 
-            xml.Save(@"C:\Users\大西　遼佑\source\repos\backpractice3\backpractice3\bin\Debug\net5.0-windows\test004.xml");
+            xml.Save(@"test004.xml");
 
             MessageBox.Show("Write Complete!");
 
@@ -90,7 +91,7 @@ namespace backPractice
 
             private void PrintText(object sender, RoutedEventArgs e)
             { 
-            var xml = XElement.Load(@"C:\Users\大西　遼佑\source\repos\backpractice3\backpractice3\bin\Debug\net5.0-windows\test004.xml");
+            var xml = XElement.Load(@"test004.xml");
             var lbi = ListBox1.SelectedItem.ToString();
             //メンバー情報のタグ内の情報を取得する
             var cs = (from item in xml.Elements("ListOfInspectionMethod")
